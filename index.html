@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fitness Membership Checker</title>
+</head>
+<body>
+    <div id="card">
+        <h1>💪Fitness Membership Checker</h1>
+        <p>Enter your membership details:</p>
+
+            <div id="membershipForm">
+                    <label for="memberName">Name:</label>
+                    <input
+                        type="text"
+                        id="memberName"
+                        required
+                    />
+                    <label for="memberAge">Age:</label>
+                    <input
+                        type="text"
+                        id="memberAge"
+                        required
+                    />
+                    <label for="memberWeight">Weight (kg):</label>
+                    <input
+                        type="text"
+                        id="memberWeight"
+                        required
+                    />
+                    <label for="memberHeight">Height (m):</label>
+                    <input
+                        type="text"
+                        id="memberHeight"
+                        required
+                    />
+                    <label for="fitnessGoal">Fitness Goal:</label>
+                        <select id="fitnessGoal">
+                            <option value="">Select a goal</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="muscle-gain">Muscle Gain</option>
+                            <option value="general-fitness">General Fitness</option>
+                        </select>
+            </div>
+            <button id="checkMembership">Check Membership</button>
+
+                <div id="resultDisplay"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
