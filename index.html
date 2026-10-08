@@ -12,30 +12,59 @@
         <p>Enter your membership details:</p>
 
             <div id="membershipForm">
+
+                <!--Section for member name-->
                     <label for="memberName">Name:</label>
                     <input
                         type="text"
                         id="memberName"
                         required
                     />
+
+                <!--Section for member age-->
                     <label for="memberAge">Age:</label>
                     <input
                         type="text"
                         id="memberAge"
                         required
                     />
+
+                    <!--Weight input with unit selection-->
                     <label for="memberWeight">Weight (kg):</label>
-                    <input
-                        type="text"
-                        id="memberWeight"
-                        required
-                    />
-                    <label for="memberHeight">Height (cm/m):</label>
-                    <input
-                        type="text"
-                        id="memberHeight"
-                        required
-                    />
+
+                        <div class="weight-input">
+                            <input
+                                type="text"
+                                id="memberWeight"
+                                required
+                            />
+
+                            <select id="weightUnit">
+                                <option value="kg">kg</option>
+                                <option value="lbs">lbs</option>
+                            </select>
+                        </div>
+
+                    <!-- Height input with unit selection -->    
+                    <label for="memberHeight">Height:</label>
+
+                        <div class="height-input">
+                            <input
+                                type="text"
+                                id="memberHeight"
+                                required
+                            />
+
+                            <select id="heightUnit">
+                                <option value="cm">cm</option>
+                                <option value="m">m</option>
+                                <option value="ft">ft</option>
+                                <option value="inch">inch</option>
+                            </select>
+                        </div>
+
+
+                    <!--Fitness goal selection-->
                     <label for="fitnessGoal">Fitness Goal:</label>
                         <select id="fitnessGoal">
                             <option value="">Select a goal</option>
@@ -44,10 +73,12 @@
                             <option value="general-fitness">General Fitness</option>
                         </select>
             </div>
+
             <button id="checkMembership">Check Membership</button>
 
                 <div id="resultDisplay"></div>
 
+                <!-- BMI Note -->
                 <p class="bmi-note">
                     Note: BMI is a general screening measure and does not account for factors such as muscle mass, age, or body composition. It should not be used as a medical diagnosis.
                 </p>

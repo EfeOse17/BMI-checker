@@ -1,7 +1,9 @@
 let memberName = document.getElementById("memberName");
 let memberAge = document.getElementById("memberAge");
 let memberWeight = document.getElementById("memberWeight");
+let weightUnit = document.getElementById("weightUnit");
 let memberHeight = document.getElementById("memberHeight");
+let heightUnit = document.getElementById("heightUnit");
 let fitnessGoal = document.getElementById("fitnessGoal");
 let resultDisplay = document.getElementById("resultDisplay");
 
@@ -11,6 +13,8 @@ let checkMembership = document.getElementById("checkMembership");
         let memberAgeValue = parseInt(memberAge.value.trim());
         let memberWeightValue = parseFloat(memberWeight.value.trim());
         let memberHeightValue = parseFloat(memberHeight.value.trim());
+        let weightUnitValue = weightUnit.value;
+        let heightUnitValue = heightUnit.value;
         let fitnessGoalValue = fitnessGoal.value;
 
         //Validate inputs
@@ -32,7 +36,28 @@ let checkMembership = document.getElementById("checkMembership");
             } else {
 
                 // All valid - calculate the BMI here
-                let memberHeightInMeters = memberHeightValue / 100; // Convert height from cm to meters
+                let memberHeightInMeters; // Variable to store heights in meter, centimeter, and inches
+
+                    if(heightUnitValue === "cm") {
+                        memberHeightInMeters = memberHeightValue / 100;
+                    } else if (heightUnitValue === "m") {
+                        memberHeightInMeters = memberHeightValue;
+                    } else if (heightUnitValue === "ft") {
+                        memberHeightInMeters = memberHeightValue * 0.3048;
+                    } else if (memberUnitValue === "inch") {
+                        memberHeightInMeters = memberHeightValue * 0.0254;
+                    }
+
+                    //Variable to store weight in either kg or pounds
+                    let memberWeightInKg;
+
+                        if(weightUnitValue === "kg") {
+                            memberWeightInKg = memberWeightValue;
+                        } else if(weightUnitValue === "lbs") {
+                            memberWeightInKg = memberWeightValue * 0.453592;
+                        }
+
+                //Calculate BMI and determine the category
                 let bmi = memberWeightValue / (memberHeightInMeters * memberHeightInMeters);
                 let bmiCategory;
 
