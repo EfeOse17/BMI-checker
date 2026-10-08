@@ -32,7 +32,8 @@ let checkMembership = document.getElementById("checkMembership");
             } else {
 
                 // All valid - calculate the BMI here
-                let bmi = memberWeightValue / (memberHeightValue * memberHeightValue);
+                let memberHeightInMeters = memberHeightValue / 100; // Convert height from cm to meters
+                let bmi = memberWeightValue / (memberHeightInMeters * memberHeightInMeters);
                 let bmiCategory;
 
                     if(bmi < 18.5) {
